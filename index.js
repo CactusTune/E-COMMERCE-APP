@@ -36,6 +36,14 @@ app.use('/api/orders', orderRoute)
 app.use('/api/checkout', stripeRoute)
 
 
+app.get("/", (request, response) => {
+    response.status(200).json({
+      status: "success",
+      message: "welcome to my e-commerce API",
+    });
+  });
+
 app.listen(process.env.PORT || 3005, ()=>{
     console.log("Backend Server is Running on localhost://3005")
 })
+
